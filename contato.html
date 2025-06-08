@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AjudaClima - Contato</title>
+
+  <!-- ==================== CSS ==================== -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- ==================== Scripts ==================== -->
+  <script src="../js/script.js" defer></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("Pf_Am-GoOKy8c9o2r");
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- ==================== HEADER ==================== -->
+  <header id="header">
+    <a id="logo" href="./index.html">
+      <img src="./img/logo-ajudaclima.png" alt="Logo do AjudaClima" />
+    </a>
+    <nav id="nav" aria-label="Menu principal">
+      <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+        Menu<span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu">
+        <li><a href="..//index.html">Início</a></li>
+        <li><a href="./integrantes.html">Integrantes</a></li>
+        <li><a href="./faq.html">FAQ</a></li>
+        <li><a href="./contato.html">Contato</a></li>
+        <li><a href="./abrigos.html">Abrigos</a></li>
+        <li><a href="./alertas.html">Alertas</a></li>
+        <li><a href="./login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== MAIN ==================== -->
+  <main>
+    <div class="acessibilidade-botoes">
+      <button onclick="aumentarFonte()">A+</button>
+      <button onclick="diminuirFonte()">A−</button>
+      <button onclick="alternarTema()">🌓 Tema</button>
+    </div>
+    <!-- ==================== FORMULÁRIO DE CONTATO ==================== -->
+    <form id="form-contato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem-feedback"></div>
+
+    <!-- ==================== INFO ADICIONAL ==================== -->
+    <div class="info-toggle-container">
+      <button id="info-toggle" aria-expanded="false" aria-controls="info-extra" title="Mais informações">+</button>
+      <div id="info-extra" hidden>
+        <p><strong>Tel.:</strong> (0xx11) 2661-0000</p>
+        <p><strong>Endereço:</strong> Av. Dr. Enéas de Carvalho Aguiar, 255
+          Cerqueira César
+          05403-000
+          São Paulo - Brasil</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="rodape">
+    <p>
+      &copy; 2025 AjudaClima - Todos os direitos reservados
+    </p>
+    <div class="redes">
+      <a aria-label="Facebook" href="https://www.facebook.com/ministeriomeioambiente" target="_blank">
+        <img alt="Facebook" src="./img/icons-facebook.png" />
+      </a>
+      <a aria-label="Instagram" href="https://www.instagram.com/mmeioambiente" target="_blank">
+        <img alt="Instagram" src="./img/icons-instagram.png" />
+      </a>
+      <a aria-label="YouTube" href="https://www.youtube.com/@mmeioambiente" target="_blank">
+        <img alt="YouTube" src="./img/icons-youtube.png" />
+      </a>
+      <a aria-label="LinkedIn" href="https://www.linkedin.com/company/minist%C3%A9rio-do-meio-ambiente" target="_blank">
+        <img alt="LinkedIn" src="./img/icons-linkedin.png" />
+      </a>
+      <a aria-label="Twitter" href="https://x.com/mmeioambiente" target="_blank">
+        <img alt="Twitter" src="./img/icons-twitter.png" />
+      </a>
+    </div>
+  </footer>
+</body>
+
+</html>
