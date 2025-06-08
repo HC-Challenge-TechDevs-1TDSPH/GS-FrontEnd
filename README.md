@@ -60,6 +60,6 @@ Este projeto foi desenvolvido como parte da disciplina **Global Solution 2025** 
 
 📁 Acesse o repositório do projeto clicando no link abaixo:
 
-➡️ [https://github.com/Felipe-M-de-Sousa/AjudaClima](https://github.com/Felipe-M-de-Sousa/AjudaClima)
+➡️ https://github.com/HC-Challenge-TechDevs-1TDSPH/GS-FrontEnd
 
 ---
