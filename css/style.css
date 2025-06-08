@@ -124,3 +124,387 @@ form textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+/*==================== COMPONENTES ====================*/
+.integrantes {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.integrantes img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.foto-integrante {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--cor-primaria);
+}
+
+.redes {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes a img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.redes a:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/*==================== MEDIA QUERIES ====================*/
+@media (max-width: 600px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0;
+    background: var(--cor-primaria);
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    color: var(--cor-clara);
+  }
+
+  #hamburger {
+    border-top: 2px solid var(--cor-clara);
+    width: 20px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--cor-clara);
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  .redes a img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.info-toggle-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+#info-toggle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: var(--cor-primaria);
+  color: var(--cor-clara);
+  border: none;
+  border-radius: 999px; /* pílula */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#info-toggle:hover {
+  background: var(--cor-secundaria);
+  transform: scale(1.05);
+}
+
+#info-extra {
+  margin-top: 1rem;
+  background: var(--cor-clara);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+#rodape {
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+  color: white;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.rodape-conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#rodape p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+#rodape .redes {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#rodape .redes a img {
+  width: clamp(28px, 6vw, 36px);
+  height: clamp(28px, 6vw, 36px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  object-fit: contain;
+}
+
+#rodape .redes a:hover img {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* ===== Acessibilidade ===== */
+body {
+  font-size: 100%;
+  transition: background 0.8s, color 0.8s;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode a {
+  color: #90cdf4;
+}
+
+body.dark-mode #header,
+body.dark-mode #rodape {
+  background: #121212;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: var(--cor-clara);
+  border: 1px solid #444;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode form label {
+  color: #f1f1f1;
+}
+
+body.dark-mode #menu a {
+  color: var(--cor-clara);
+}
+
+/* Garante que nas páginas claras os textos do formulário fiquem pretos */
+form label,
+input,
+textarea,
+#form-login label,
+#form-contato label {
+  color: #000;
+}
+
+/* Botões de acessibilidade */
+.acessibilidade-botoes {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.acessibilidade-botoes button {
+  padding: 0.5rem 1rem;
+  background: var(--cor-primaria);
+  color: var(--cor-clara);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.acessibilidade-botoes button:hover {
+  background: var(--cor-secundaria);
+}
+
+
+/* Ajuste: manter inputs brancos no tema escuro */
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: var(--cor-clara) !important;
+  color: #000 !important;
+  border: 1px solid #444;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #666;
+}
+
+body.dark-mode form label {
+  color: #000;
+}
+
+
+/* Ajuste: botão de mais informações */
+
+body.dark-mode #info-toggle {
+  background-color: var(--cor-clara);
+  color: #000;
+  border: 1px solid #999;
+}
+
+
+/* Ajuste: texto do info-extra no tema escuro */
+
+body.dark-mode #info-extra {
+  color: #000 !important;
+}
+
+
+/* Ajuste: botões de acessibilidade no modo escuro */
+
+body.dark-mode .acessibilidade-botoes button {
+  background-color: var(--cor-clara);
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+body.dark-mode .acessibilidade-botoes button:hover {
+  background-color: #eee;
+}
+
+
+/* Ajuste: fundo preto, texto e divisões brancos no menu hamburguer */
+
+body.dark-mode #menu {
+  background-color: #000 !important;
+}
+
+body.dark-mode #menu a {
+  color: var(--cor-clara) !important;
+  background: none;
+  border-radius: 0;
+  text-align: left;
+  margin: 0;
+}
+
+body.dark-mode #menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #menu a:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Ajuste: padding à esquerda no menu hambúrguer */
+
+body.dark-mode #menu a {
+  padding-left: 1.5rem !important;
+}
+
+
+/* Ajuste: consistência de tamanho nos botões de acessibilidade */
+
+.acessibilidade-botoes button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  box-shadow: none;
+  font-weight: normal;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+body.dark-mode .acessibilidade-botoes button {
+  border-color: #ccc;
+}
+
+
+/* Ajuste: altura nos botões de acessibilidade */
+
+.acessibilidade-botoes button {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Ajuste: espaçamento consistente do menu no tema escuro (desktop/tablet) */
+
+body.dark-mode #menu a {
+  margin: 0 !important;
+  padding: 0.5rem !important;
+  border-bottom: none;
+}
+
+
+/* Ajuste final: menu hambúrguer mobile no tema escuro */
+
+@media (max-width: 600px) {
+  body.dark-mode #menu a {
+    padding: 1rem 1.5rem !important;
+    color: var(--cor-clara) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+
+  body.dark-mode #menu a:last-child {
+    border-bottom: none !important;
+  }
+}
