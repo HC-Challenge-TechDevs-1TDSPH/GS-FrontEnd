@@ -1,6 +1,6 @@
-// ======= EVENTO PRINCIPAL =======
+//  EVENTO PRINCIPAL 
 document.addEventListener("DOMContentLoaded", () => {
-  // ======= Menu Mobile =======
+  //  Menu Mobile 
   const btnMobile = document.getElementById("btn-mobile");
   const nav = document.getElementById("nav");
 
@@ -17,25 +17,50 @@ document.addEventListener("DOMContentLoaded", () => {
     btnMobile.addEventListener("touchstart", toggleMenu);
   }
 
-  // ======= Formulário de Contato (emailjs) =======
-  const formContato = document.getElementById("form-contato");
-  if (formContato) {
-    formContato.addEventListener("submit", function (e) {
-      e.preventDefault();
-      emailjs.sendForm("service_ce7qmrw", "template_x01kk7g", this)
-        .then(() => {
-          document.getElementById("mensagem-feedback").innerText =
-            "Mensagem enviada com sucesso!";
-          this.reset();
-        })
-        .catch((error) => {
-          document.getElementById("mensagem-feedback").innerText =
-            "Erro ao enviar: " + error.text;
-        });
-    });
-  }
+//  Formulário de Contato 
+ //  Armazenamento usando Local Storage 
 
-  // ======= Toggle de informações extras =======
+const formContato = document.getElementById("form-contato");
+
+if (formContato) {
+  formContato.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Coletar os dados
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("mensagem").value;
+
+    // Criar objeto da nova mensagem
+    const novaMensagem = {
+      nome,
+      email,
+      mensagem,
+      data: new Date().toLocaleString()
+    };
+
+    // Recuperar mensagens anteriores (ou criar array vazio)
+    const mensagensSalvas = JSON.parse(localStorage.getItem("mensagensContato")) || [];
+
+    // Adicionar nova mensagem
+    mensagensSalvas.push(novaMensagem);
+
+    // Salvar no Local Storage
+    localStorage.setItem("mensagensContato", JSON.stringify(mensagensSalvas));
+
+    // Feedback ao usuário
+    document.getElementById("mensagem-feedback").innerText = "Mensagem armazenada com sucesso!";
+
+    // Limpar o formulário
+    formContato.reset();
+
+    // (opcional) Mostrar no console
+    console.log("Mensagens armazenadas:", mensagensSalvas);
+  });
+}
+
+
+  //  Toggle de informações extras 
   const toggleBtn = document.getElementById("info-toggle");
   const infoExtra = document.getElementById("info-extra");
 
@@ -54,13 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ======= Inicialização de funcionalidades =======
+  //  Inicialização de funcionalidades 
   carregarAbrigos();
   configurarFormularioAbrigo();
   configurarFormularioAlerta();
   adicionarBotaoRemoverAlertasExistentes();
 
-  // ======= Botões de acessibilidade =======
+  //  Botões de acessibilidade 
   const temaBtn = document.getElementById("botao-tema");
   if (temaBtn) temaBtn.addEventListener("click", alternarTema);
 
@@ -71,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (diminuirBtn) diminuirBtn.addEventListener("click", diminuirFonte);
 });
 
-// ======= Acessibilidade: Controle de Fonte e Tema =======
+//  Acessibilidade: Controle de Fonte e Tema 
 function aumentarFonte() {
   const body = document.body;
   let fontSize = parseFloat(getComputedStyle(body).fontSize);
@@ -90,7 +115,7 @@ function alternarTema(event) {
   if (event?.target) event.target.setAttribute("aria-pressed", isDark);
 }
 
-// ======= Dados e Formulário de Abrigos =======
+//  Dados e Formulário de Abrigos 
 function carregarAbrigos() {
   const abrigos = [
     { nome: 'Abrigo Central', endereco: 'Rua A, 100', capacidade: 120 },
@@ -142,7 +167,7 @@ function configurarFormularioAbrigo() {
   });
 }
 
-// ======= Dados e Formulário de Alertas =======
+//  Dados e Formulário de Alertas 
 function configurarFormularioAlerta() {
   const btn = document.getElementById("add-alerta");
   if (!btn) return;
@@ -164,7 +189,7 @@ function configurarFormularioAlerta() {
   });
 }
 
-// ======= Popup de confirmação reutilizável =======
+//  Popup de confirmação reutilizável 
 function mostrarDialogMensagem(mensagem) {
   let dialog = document.getElementById("dialog-confirmacao");
   if (!dialog) {
@@ -181,7 +206,7 @@ function mostrarDialogMensagem(mensagem) {
   dialog.showModal();
 }
 
-// ======= Remoção de alertas existentes na tela =======
+//  Remoção de alertas existentes na tela 
 function adicionarBotaoRemoverAlertasExistentes() {
   const alertas = document.querySelectorAll("#lista-alertas .alerta");
   alertas.forEach(alerta => {
