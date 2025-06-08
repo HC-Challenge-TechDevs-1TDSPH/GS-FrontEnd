@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AjudaClima - Início</title>
+  <!-- <link rel="shortcut icon" href="./assets/img/icons-ajudaclima.png"> -->
+
+  <!-- ==================== CSS ==================== -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- ==================== Scripts ==================== -->
+  <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+  <!-- ==================== HEADER ==================== -->
+  <header id="header">
+    <a id="logo" href="./index.html">
+      <img src="./assets/img/logo-ajudaclima.png" alt="Logo do AjudaClima" />
+    </a>
+    <nav id="nav" aria-label="Menu principal">
+      <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+        Menu<span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu">
+        <li><a href="./index.html">Início</a></li>
+        <li><a href="./assets/integrantes.html">Integrantes</a></li>
+        <li><a href="./assets/faq.html">FAQ</a></li>
+        <li><a href="./assets/contato.html">Contato</a></li>
+        <li><a href="./assets/abrigos.html">Abrigos</a></li>
+        <li><a href="./assets/alertas.html">Alertas</a></li>
+        <li><a href="./assets/login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== MAIN ==================== -->
+  <main>
+    <div class="acessibilidade-botoes">
+      <button onclick="aumentarFonte()">A+</button>
+      <button onclick="diminuirFonte()">A−</button>
+      <button onclick="alternarTema()">🌓 Tema</button>
+    </div>
+
+    <!-- ==================== SOBRE ==================== -->
+    <section class="hero">
+      <h1>Facilitando o acesso à suporte em eventos climaticos extremas</h1>
+      <p>Uma plataforma pensada para quem está em situação de vulnerabilidade em situações de eventos climaticos
+        extremos. Simples, acessível e feita para você.</p>
+    </section>
+
+    <section class="recursos">
+      <h2>O que você encontra aqui</h2>
+      <div class="cards-container">
+        <div class="card">
+          <h3>Lista de Abrigos</h3>
+          <p>Conheça todos os abrigos disponíveis de forma simples e rápidos, com sua capacidade e endereço.</p>
+          <a href="./assets/abrigos.html">Ver abrigos</a>
+        </div>
+        <div class="card">
+          <h3>Alertas</h3>
+          <p>Conheça todos os alertas presentes na sua região para se manter seguro e preparado.</p>
+          <a href="./assets/alertas.html">Ver alertas</a>
+        </div>
+        <div class="card">
+          <h3>Dúvidas Frequentes</h3>
+          <p>Encontre respostas para as perguntas mais comuns.</p>
+          <a href="./assets/faq.html">Acessar FAQ</a>
+        </div>
+        <div class="card">
+          <h3>Fale Conosco</h3>
+          <p>Precisa de ajuda? Entre em contato com a nossa equipe.</p>
+          <a href="./assets/contato.html">Abrir contato</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sobre">
+      <h2>Sobre o Projeto</h2>
+      <p>Este projeto foi desenvolvido para a Global Solution 2025, com o objetivo de ajudar pessoas em situação de
+        vulnerabilidade para evento climaticos extremos.</p>
+    </section>
+    <!-- ==================== FOOTER ==================== -->
+  </main>
+  <footer id="rodape">
+    <p>&copy; 2025 AjudaClima - Todos os direitos reservados</p>
+    <div class="redes">
+      <a href="https://www.facebook.com/ministeriomeioambiente" target="_blank"><img
+          src="./assets/img/icons-facebook.png" alt="Facebook" /></a>
+      <a href="https://www.instagram.com/mmeioambiente" target="_blank"><img src="./assets/img/icons-instagram.png"
+          alt="Instagram" /></a>
+      <a href="https://www.youtube.com/@mmeioambiente" target="_blank"><img src="./assets/img/icons-youtube.png"
+          alt="YouTube" /></a>
+      <a href="https://www.linkedin.com/company/minist%C3%A9rio-do-meio-ambiente" target="_blank"><img
+          src="./assets/img/icons-linkedin.png" alt="LinkedIn" /></a>
+      <a href="https://x.com/mmeioambiente" target="_blank"><img src="./assets/img/icons-twitter.png"
+          alt="Twitter" /></a>
+    </div>
+  </footer>
+</body>
+
+</html>
