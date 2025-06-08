@@ -812,3 +812,199 @@ body.dark-mode .card h3,
 body.dark-mode .card a {
   color: #000 !important;
 }
+
+/*==================== ABRIGOS E ALERTAS ====================*/
+.remover-alerta,
+.remover-abrigo {
+  background-color: var(--cor-alerta);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.remover-alerta:hover,
+.remover-abrigo:hover {
+  background-color: var(--cor-escura);
+}
+
+/* ===== Estilo para os alertas ===== */
+#lista-alertas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
+
+.alerta {
+  background-color: var(--cor-clara);
+  color: var(--cor-texto);
+    padding: 1rem;
+    border-left: 6px solid var(--cor-atencao);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+/* ===== Estilo para tabela de abrigos ===== */
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--cor-clara);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+thead th {
+    padding: 1rem;
+    text-align: left;
+    font-size: 1rem;
+}
+
+tbody td {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #eee;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--cor-fundo);
+}
+
+body.dark-mode table td,
+body.dark-mode table th {
+  color: #000000 !important;
+}
+
+
+/* ===== Resposabilidade da tela ===== */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 0.5rem;
+        background-color: var(--cor-clara);
+    }
+
+    tbody td {
+        padding: 0.5rem;
+        text-align: right;
+        position: relative;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 0.5rem;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+/* ===== Dialog centralizado ===== */
+dialog {
+  border: none;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 1000;
+}
+
+/* ===== Estilização para input inválido ===== */
+input:invalid {
+  border-color: red;
+}
+
+/* ===== Estilo do popup de confirmação ===== */
+#dialog-confirmacao {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--cor-clara);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: none;
+  z-index: 1000;
+  text-align: center;
+}
+
+#dialog-confirmacao p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+#fechar-dialog {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#fechar-dialog:hover {
+  background-color: var(--cor-secundaria);
+}
+
+/* ===== Estilo do mapa ===== */
+.mapa-container {
+    margin: 2rem auto;
+    max-width: 900px;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.mapa-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.mapa-responsivo {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mapa-responsivo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
