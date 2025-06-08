@@ -2,81 +2,116 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AjudaClima - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AjudaClima - Integrantes</title>
 
-  <!-- ==================== CSS ==================== -->
-  <link rel="stylesheet" href="../css/style.css">
+    <!-- ==================== CSS ==================== -->
+    <link rel="stylesheet" href="../css/style.css">
 
-  <!-- ==================== Scripts ==================== -->
-  <script src="../js/script.js" defer></script>
+    <!-- ==================== Scripts ==================== -->
+    <script src="../js/script.js" defer></script>
 </head>
 
 <body>
-  <!-- ==================== HEADER ==================== -->
-  <header id="header">
-    <a id="logo" href="./index.html">
-      <img src="./img/logo-ajudaclima.png" alt="Logo do AjudaClima" />
-    </a>
-    <nav id="nav" aria-label="Menu principal">
-      <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-        Menu<span id="hamburger"></span>
-      </button>
-      <ul id="menu" role="menu">
-        <li><a href="..//index.html">Início</a></li>
-        <li><a href="./integrantes.html">Integrantes</a></li>
-        <li><a href="./faq.html">FAQ</a></li>
-        <li><a href="./contato.html">Contato</a></li>
-        <li><a href="./abrigos.html">Abrigos</a></li>
-        <li><a href="./alertas.html">Alertas</a></li>
-        <li><a href="./login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- ==================== HEADER ==================== -->
+    <header id="header">
+        <a id="logo" href="./index.html">
+            <img src="./img/logo-ajudaclima.png" alt="Logo do AjudaClima" />
+        </a>
+        <nav id="nav" aria-label="Menu principal">
+            <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu"
+                aria-expanded="false">
+                Menu<span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li><a href="..//index.html">Início</a></li>
+                <li><a href="./integrantes.html">Integrantes</a></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+                <li><a href="./abrigos.html">Abrigos</a></li>
+                <li><a href="./alertas.html">Alertas</a></li>
+                <li><a href="./login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- ==================== MAIN ==================== -->
-  <main>
-    <div class="acessibilidade-botoes">
-      <button onclick="aumentarFonte()">A+</button>
-      <button onclick="diminuirFonte()">A−</button>
-      <button onclick="alternarTema()">🌓 Tema</button>
-    </div>
-    <!-- ==================== FORMULÁRIO DE LOGIN ==================== -->
-    <form id="form-login">
-      <label for="usuario">Usuário:</label>
-      <input type="text" id="usuario" name="usuario" required>
+    <!-- ==================== MAIN ==================== -->
+    <main>
+        <div class="acessibilidade-botoes">
+            <button onclick="aumentarFonte()">A+</button>
+            <button onclick="diminuirFonte()">A−</button>
+            <button onclick="alternarTema()">🌓 Tema</button>
+        </div>
+        <!-- ==================== CARDS DOS INTEGRANTES ==================== -->
+        <section class="integrantes">
+            <img src="./img/foto-felipe.jpeg" alt="Foto de Felipe Monte de Sousa" class="foto-integrante">
+            <h3>Felipe Monte de Sousa</h3>
+            <p>RM: 562019 | Turma: 1TDSPH</p>
+            <div class="redes">
+                <a href="https://github.com/Felipe-M-de-Sousa" target="_blank" aria-label="GitHub">
+                    <img src="./img/icons-github.png" alt="GitHub de Felipe">
+                </a>
+                <a href="https://www.linkedin.com/in/felipe-sousa-761633356/" target="_blank" aria-label="LinkedIn">
+                    <img src="./img/icons-linkedin.png" alt="LinkedIn de Felipe">
+                </a>
+            </div>
+        </section>
 
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" name="senha" required>
+        <section class="integrantes">
+            <img src="./img/foto-aline.jpeg" alt="Foto de Aline Lourenço Carvalho" class="foto-integrante">
+            <h3>Aline Lourenço Carvalho</h3>
+            <p>RM: 564538 | Turma: 1TDSPH</p>
+            <div class="redes">
+                <a href="https://github.com/LibaLourenco" target="_blank" aria-label="GitHub">
+                    <img src="./img/icons-github.png" alt="GitHub de Aline">
+                </a>
+                <a href="https://www.linkedin.com/in/aline-louren%C3%A7o-212904309/" target="_blank"
+                    aria-label="LinkedIn">
+                    <img src="./img/icons-linkedin.png" alt="LinkedIn de Aline">
+                </a>
+            </div>
+        </section>
 
-      <button type="submit">Entrar</button>
-    </form>
-    <div id="login-feedback"></div>
-    <!-- ==================== FOOTER ==================== -->
-  </main>
-  <footer id="rodape">
-    <p>
-      &copy; 2025 AjudaClima - Todos os direitos reservados
-    </p>
-    <div class="redes">
-      <a aria-label="Facebook" href="https://www.facebook.com/ministeriomeioambiente" target="_blank">
-        <img alt="Facebook" src="./img/icons-facebook.png" />
-      </a>
-      <a aria-label="Instagram" href="https://www.instagram.com/mmeioambiente" target="_blank">
-        <img alt="Instagram" src="./img/icons-instagram.png" />
-      </a>
-      <a aria-label="YouTube" href="https://www.youtube.com/@mmeioambiente" target="_blank">
-        <img alt="YouTube" src="./img/icons-youtube.png" />
-      </a>
-      <a aria-label="LinkedIn" href="https://www.linkedin.com/company/minist%C3%A9rio-do-meio-ambiente" target="_blank">
-        <img alt="LinkedIn" src="./img/icons-linkedin.png" />
-      </a>
-      <a aria-label="Twitter" href="https://x.com/mmeioambiente" target="_blank">
-        <img alt="Twitter" src="./img/icons-twitter.png" />
-      </a>
-    </div>
-  </footer>
+        <section class="integrantes">
+            <img src="./img/foto-luna.jpeg" alt="Foto de Luna de Carvalho Guimarães" class="foto-integrante">
+            <h3>Luna de Carvalho Guimarães</h3>
+            <p>RM: 562290 | Turma: 1TDSPH</p>
+            <div class="redes">
+                <a href="https://github.com/lunaguima" target="_blank" aria-label="GitHub">
+                    <img src="./img/icons-github.png" alt="GitHub de Luna">
+                </a>
+                <a href="https://www.linkedin.com/in/luna-guimar%C3%A3es-b0ba82309/" target="_blank"
+                    aria-label="LinkedIn">
+                    <img src="./img/icons-linkedin.png" alt="LinkedIn de Luna">
+                </a>
+            </div>
+        </section>
+        <!-- ==================== FOOTER ==================== -->
+    </main>
+    <footer id="rodape">
+        <p>
+            &copy; 2025 AjudaClima - Todos os direitos reservados
+        </p>
+        <div class="redes">
+            <a aria-label="Facebook" href="https://www.facebook.com/ministeriomeioambiente" target="_blank">
+                <img alt="Facebook" src="./img/icons-facebook.png" />
+            </a>
+            <a aria-label="Instagram" href="https://www.instagram.com/mmeioambiente" target="_blank">
+                <img alt="Instagram" src="./img/icons-instagram.png" />
+            </a>
+            <a aria-label="YouTube" href="https://www.youtube.com/@mmeioambiente" target="_blank">
+                <img alt="YouTube" src="./img/icons-youtube.png" />
+            </a>
+            <a aria-label="LinkedIn" href="https://www.linkedin.com/company/minist%C3%A9rio-do-meio-ambiente"
+                target="_blank">
+                <img alt="LinkedIn" src="./img/icons-linkedin.png" />
+            </a>
+            <a aria-label="Twitter" href="https://x.com/mmeioambiente" target="_blank">
+                <img alt="Twitter" src="./img/icons-twitter.png" />
+            </a>
+        </div>
+    </footer>
 </body>
 
 </html>
