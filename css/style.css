@@ -576,3 +576,239 @@ body.dark-mode #menu a {
     border-bottom: none !important;
   }
 }
+
+/* ==================== AJUSTES DE RESPONSIVIDADE ==================== */
+
+/* Tablet e mobile: menu hamburger visível, logo e menu adaptáveis */
+@media (max-width: 768px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0;
+    background: var(--cor-primaria);
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0;
+    visibility: hidden;
+    overflow-y: hidden;
+    flex-direction: column;
+  }
+
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    color: var(--cor-clara);
+  }
+
+  #hamburger {
+    border-top: 2px solid var(--cor-clara);
+    width: 20px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--cor-clara);
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  #logo img {
+    height: 50px;
+  }
+}
+
+/* === Estilos adicionais para index === */
+
+.hero {
+  text-align: center;
+  background: linear-gradient(160deg, var(--cor-primaria), var(--cor-secundaria));
+  color: var(--cor-clara);
+  padding: 3rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.hero .btn-cta {
+  display: inline-block;
+  background: var(--cor-clara);
+  color: var(--cor-primaria);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero .btn-cta:hover {
+  background: var(--cor-fundo);
+  transform: scale(1.05);
+}
+
+.recursos {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--cor-clara);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow:
+    0 4px 8px rgba(47, 75, 124, 0.1),
+    0 8px 20px rgba(47, 75, 124, 0.15);
+  width: 100%;
+  max-width: 320px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* evita que o conteúdo ultrapasse o limite do card */
+  word-wrap: break-word; /* força quebra de palavras longas */
+  box-sizing: border-box; /* garante que padding e borda sejam incluídos na largura */
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 12px 24px rgba(47, 75, 124, 0.25),
+    0 20px 40px rgba(47, 75, 124, 0.3);
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+  word-break: break-word; /* quebra palavras longas para não sair do container */
+  white-space: normal; /* evita que o texto fique numa única linha */
+  margin-bottom: 1rem;
+  color: var(--cor-escura);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(122, 158, 159, 0.2);
+}
+
+.card p {
+  flex-grow: 1;
+  color: var(--cor-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.card a {
+  align-self: flex-start;
+  color: var(--cor-clara);
+  background: var(--cor-primaria);
+  padding: 0.65rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(47, 75, 124, 0.35);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.25s ease;
+  user-select: none;
+}
+
+.card a:hover,
+.card a:focus {
+  background: var(--cor-secundaria);
+  box-shadow: 0 6px 20px rgba(122, 158, 159, 0.5);
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.card a:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(122, 158, 159, 0.3);
+}
+
+.sobre {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.sobre h2 {
+  margin-bottom: 1rem;
+}
+
+.sobre p {
+  font-size: 1.1rem;
+}
+
+/* Garante texto preto dentro dos cards, mesmo no modo escuro */
+.card,
+.card p,
+.card h3,
+.card a {
+  color: #000 !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .card p,
+body.dark-mode .card h3,
+body.dark-mode .card a {
+  color: #000 !important;
+}
