@@ -125,6 +125,74 @@ form textarea {
   border-radius: 5px;
 }
 
+/*==================== BUTTON ====================*/
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--cor-primaria);
+  color: var(--cor-clara);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: var(--cor-secundaria);
+  transform: scale(1.02);
+}
+
+button:active {
+  background-color: var(--cor-escura);
+  transform: scale(0.98);
+}
+
+/*==================== DETALHES ====================*/
+details {
+  margin-bottom: 20px;
+  border: 1px solid var(--cor-secundaria);
+  border-radius: 8px;
+  padding: 10px 15px;
+  background-color: var(--cor-clara);
+  color: var(--cor-texto);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+details[open] {
+  background-color: var(--cor-fundo);
+  border-color: var(--cor-primaria);
+}
+
+summary {
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 20px;
+  color: var(--cor-primaria);
+}
+
+summary::marker {
+  display: none;
+}
+
+summary::after {
+  content: "➤";
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--cor-secundaria);
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+  color: var(--cor-primaria);
+}
+
 /*==================== COMPONENTES ====================*/
 .integrantes {
   text-align: center;
